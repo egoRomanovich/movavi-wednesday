@@ -1,11 +1,3 @@
-def save_result(old_func):
-    def new_func(*args, **kwargs):
-        result = old_func(*args, **kwargs)
-        with open('results.txt', 'a') as f:
-            print(f'{result}', file=f)
-            # f.write(f'{result}\n')
-    return new_func
-
 @save_result
 def calculate(a, b, operation='+'):
     """
